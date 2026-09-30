@@ -1,0 +1,17 @@
+{
+  "name": "@lrehmann/uscode-mcp",
+  "version": "1.0.0",
+  "description": "Search and read United States Code statutes with legal and inline citations linking to uscode.ecfr.io.",
+  "type": "module",
+  "license": "MIT",
+  "bin": { "uscode-mcp": "dist/stdio.js" },
+  "exports": { "./server": { "types": "./dist/server.d.ts", "import": "./dist/server.js" } },
+  "files": ["dist", "server.json", "README.md", "LICENSE"],
+  "repository": { "type": "git", "url": "https://github.com/lrehmann/uscode-mcp.git" },
+  "homepage": "https://uscode.ecfr.io/developers",
+  "mcpName": "io.ecfr/uscode",
+  "scripts": { "build": "tsc", "test": "npm run build && node --test test/*.test.mjs", "start": "node dist/stdio.js" },
+  "dependencies": { "@modelcontextprotocol/sdk": "1.31.0", "zod": "^4.6.5" },
+  "devDependencies": { "@types/node": "^24.5.2", "typescript": "^5.8.3" },
+  "engines": { "node": ">=20" }
+}
